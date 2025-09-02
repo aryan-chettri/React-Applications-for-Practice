@@ -22,7 +22,7 @@ export function Counter(){
                     aria-label="Decrement Value"
                     onClick={()=> disptch(decrement())}
                 >
-                    decrement
+                    Decrement
                 </button>
                 
             </div>
