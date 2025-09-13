@@ -1,5 +1,5 @@
 {
-  "name": "appwrite_practice",
+  "name": "ideas-tracker",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "appwrite": "^19.0.0",
+    "appwrite": "^18.1.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
