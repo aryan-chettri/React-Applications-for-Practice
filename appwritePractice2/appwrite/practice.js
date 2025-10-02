@@ -1,6 +1,7 @@
 import React from 'react'
 import {ID} from 'appwrite'
 import { databases } from './config.js'
+import { data } from 'react-router-dom'
 
 const collections = [
     {
@@ -12,13 +13,45 @@ const collections = [
 
 const db = {}
 
-db[collections[0].name] = {
+collections.forEach(col => {
 
-    list: (queries)=> databases.listDocuments(
-        collections[0].databaseId,
-        collections[0].id,
+    db[col.name] = {
+
+        create: (payload, id = ID.unique()) => databases.createDocument(
+            col.databaseId,
+            col.id,
+            id,
+            payload
+        ),
+
+        update: (id, payload) => databases.updateDocument(
+
+            col.databaseId,
+            col.id,
+            id,
+            payload
+        ),
+
+        get: (id) => databases.getDocument(
+            col.databaseId,
+            col.id,
+            id,
+        ),
+        delete: (id) => databases.deleteDocument(
+            col.databaseId,
+            col.id,
+            id,
+        ),
+        
+
+        list: (queries)=> databases.listDocuments(
+        col.databaseId,
+        col.id,
         queries
     )
-}
+
+    }
+})
+
 
 export {db};
