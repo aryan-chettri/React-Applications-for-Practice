@@ -6,8 +6,8 @@ import Logout from '../components/Logout'
 
 const App1 = () => {
 
-    const [name, setName] = useState('');
-    const [password, setPassword] = useState('');
+    // const [name, setName] = useState('');
+    // const [password, setPassword] = useState('');
 
 
   return (
